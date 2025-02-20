@@ -1,0 +1,24 @@
+services:
+  postgres:
+    image: postgres:17.3-bullseye
+    ports:
+      - 5431:5432
+    environment:
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_USER=nightlife_admin
+      - POSTGRES_DB=nightlife
+    restart: always
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U nightlife_admin"]
+      interval: 10s
+      timeout: 60s
+      retries: 5
+      start_period: 5s
+
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    environment:
+      - PGADMIN_DEFAULT_PASSWORD=password
+      - PGADMIN_DEFAULT_EMAIL=nightlife_admin@nightlife.co
+    ports:
+      - 8080:80

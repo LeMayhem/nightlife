@@ -1,0 +1,13 @@
+{
+  "configurations": [
+    {
+      "name": "Nightlife Debugger: Runserver",
+      "type": "debugpy",
+      "request": "launch",
+      "args": ["runserver"],
+      "django": true,
+      "autoStartBrowser": false,
+      "program": "${workspaceFolder}/src/manage.py"
+    }
+  ]
+}

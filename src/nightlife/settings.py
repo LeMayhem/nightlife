@@ -11,7 +11,8 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
-from credentials import DB_NAME, DB_USER, DB_PASSWORD, DB_HOST, DB_PORT, DJANGO_SECRET_KEY
+from dotenv import load_dotenv
+from os import getenv
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -20,6 +21,18 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
+
+load_dotenv()
+
+#Django credentials
+DJANGO_SECRET_KEY = getenv('DJANGO_SECRET_KEY')
+
+#Database Credentials
+DB_NAME = getenv('DB_NAME')
+DB_USER = getenv('DB_USER')
+DB_PASSWORD = getenv('DB_PASSWORD')
+DB_HOST = getenv('DB_HOST')
+DB_PORT = getenv('DB_PORT')
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = DJANGO_SECRET_KEY
@@ -134,10 +147,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = 'static/'
-STATIC_ROOT = BASE_DIR / 'staticfiles'
+STATIC_ROOT = f'{BASE_DIR}/staticfiles'
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = BASE_DIR / 'mediafiles'
+MEDIA_ROOT = '/tmp/nightlife/mediafiles'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field

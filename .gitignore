@@ -1,12 +1,9 @@
 .DS_Store
-/.env/
-migrations/
 src/staticfiles
 src/mediafiles/artists
 src/mediafiles/users
 src/mediafiles/events
 src/mediafiles/blog
-credentials.py
 
 # Python temp files
 __pycache__/

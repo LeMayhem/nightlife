@@ -1,6 +1,11 @@
 import requests
 import time
-from credentials import CLIENT_ID, CLIENT_SECRET, REDIRECT_URI
+from os import getenv
+
+#Spotify credentials
+CLIENT_ID = getenv('CLIENT_ID')
+CLIENT_SECRET = getenv('CLIENT_SECRET')
+REDIRECT_URI = getenv('REDIRECT_URI')
 
 # Variables globales pour stocker les jetons et l'heure d'expiration
 access_token = None
