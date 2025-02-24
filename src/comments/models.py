@@ -6,6 +6,7 @@ class Comment(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="comments")
     comment = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
+    published = models.BooleanField(default=True)
 
     class Meta:
         ordering = ["-created_on"]
