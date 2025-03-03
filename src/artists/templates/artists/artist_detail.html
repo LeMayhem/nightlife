@@ -29,6 +29,13 @@
   <div class="container">
     <div class="row margin-bottom text-center">
       <h1>{{ artist.name }}</h1>
+      {% if artist.tags %}
+        <div>
+          {% for tag in artist.tags.all %}
+            <span class="badge rounded-pill">{{ tag.name }}</span>
+          {% endfor %}
+        </div>
+      {% endif %}
     </div>
     <div class="row row-padding text-center">
       {% if artist.spotify %}
