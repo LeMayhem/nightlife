@@ -37,11 +37,15 @@
     <div class="tab-content" id="pills-tabContent">
       <div class="tab-pane fade show active" id="pills-current" role="tabpanel" aria-labelledby="pills-current-tab" tabindex="0">
         {% if events.current_events %}
-          <div class="row row-padding row-cols-1 row-cols-sm-2 row-cols-md-4">
-            {% for event in events.current_events %}
-              {% include 'events/event_cards.html' %}
-            {% endfor %}
-          </div>
+          {% regroup events.current_events by starts|date:'d F Y'|upper as current_events_list %}
+          {% for event_list in current_events_list %}
+            <h2 class="day-heading">{{ event_list.grouper }}</h2>
+            <div class="row row-padding row-cols-1 row-cols-sm-2 row-cols-md-4">
+              {% for event in event_list.list %}
+                {% include 'events/event_cards.html' %}
+              {% endfor %}
+            </div>
+          {% endfor %}
         {% else %}
           <div class="col">
             <div class="row row-padding text-center">
@@ -53,11 +57,15 @@
 
       <div class="tab-pane fade" id="pills-passed" role="tabpanel" aria-labelledby="pills-passed-tab" tabindex="0">
         {% if events.past_events %}
-          <div class="row row-padding row-cols-1 row-cols-sm-2 row-cols-md-4">
-            {% for event in events.past_events %}
-              {% include 'events/event_cards.html' %}
-            {% endfor %}
-          </div>
+          {% regroup events.past_events by starts|date:'d F Y'|upper as past_events_list %}
+          {% for event_list in past_events_list %}
+            <h2 class="day-heading">{{ event_list.grouper }}</h2>
+            <div class="row row-padding row-cols-1 row-cols-sm-2 row-cols-md-4">
+              {% for event in event_list.list %}
+                {% include 'events/event_cards.html' %}
+              {% endfor %}
+            </div>
+          {% endfor %}
         {% else %}
           <div class="col">
             <div class="row row-padding text-center">
