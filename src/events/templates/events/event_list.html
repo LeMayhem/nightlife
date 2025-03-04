@@ -22,7 +22,7 @@
       <h1>La liste des évènements</h1>
     </div>
 
-    <div class="row margin-bottom">
+    <div class="row row-padding margin-bottom">
       <div class="col">
         <ul class="nav nav-pills nav-justified" id="pills-tab" role="tablist">
           <li class="nav-item" role="presentation">
@@ -37,10 +37,10 @@
     <div class="tab-content" id="pills-tabContent">
       <div class="tab-pane fade show active" id="pills-current" role="tabpanel" aria-labelledby="pills-current-tab" tabindex="0">
         {% if events.current_events %}
-          {% regroup events.current_events by starts|date:'d F Y'|upper as current_events_list %}
+          {% regroup events.current_events by starts|date:'D j F'|upper as current_events_list %}
           {% for event_list in current_events_list %}
             <div class="margin-bottom">
-              <h2>{{ event_list.grouper }}</h2>
+              <h3>{{ event_list.grouper }}</h3>
               <div class="row row-padding row-cols-1 row-cols-sm-2 row-cols-md-4">
                 {% for event in event_list.list %}
                   {% include 'events/event_cards.html' %}
@@ -59,11 +59,11 @@
 
       <div class="tab-pane fade" id="pills-passed" role="tabpanel" aria-labelledby="pills-passed-tab" tabindex="0">
         {% if events.past_events %}
-          {% regroup events.past_events by starts|date:'d F Y'|upper as past_events_list %}
+          {% regroup events.past_events by starts|date:'D j F'|upper as past_events_list %}
 
           {% for event_list in past_events_list %}
             <div class="margin-bottom">
-              <h2 class="day-heading">{{ event_list.grouper }}</h2>
+              <h3>{{ event_list.grouper }}</h3>
               <div class="row row-padding row-cols-1 row-cols-sm-2 row-cols-md-4">
                 {% for event in event_list.list %}
                   {% include 'events/event_cards.html' %}

@@ -166,13 +166,13 @@ a:active {
     margin-bottom: 20px;
 }
 
-h1 {
+h1, h3 {
     position: relative;
     line-height: 1em;
-    margin-bottom: 0.5em;
+    margin-bottom: 1em;
 }
 
-h1:before {
+h1:before, h3:before {
     position: absolute;
     top: 1.3em;
     height: 0;
@@ -183,4 +183,8 @@ h1:before {
 
 .no-border:before {
     border: none !important;
+}
+
+.text-light:before {
+    border-top: 4px solid white;
 }
