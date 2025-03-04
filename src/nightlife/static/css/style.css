@@ -64,7 +64,7 @@ a:active {
 }
 
 .card:hover, .circle:hover {
-    transform: scale(1.10);
+    transform: scale(1.05);
 }
 
 .card-img-top {
@@ -142,11 +142,11 @@ a:active {
 }
 
 .search-icon {
-position: absolute;
-top: 50%;
-left: 30px;
-transform: translateY(-50%);
-color: #888;
+    position: absolute;
+    top: 50%;
+    left: 30px;
+    transform: translateY(-50%);
+    color: #888;
 }
 
 .text-time {
@@ -160,4 +160,27 @@ color: #888;
 }
 .nav-link, .nav-link:hover {
     color: black;
+}
+
+.margin-bottom {
+    margin-bottom: 20px;
+}
+
+h1 {
+    position: relative;
+    line-height: 1em;
+    margin-bottom: 0.5em;
+}
+
+h1:before {
+    position: absolute;
+    top: 1.3em;
+    height: 0;
+    width: 100px;
+    content: '';
+    border-top: 3px solid black;
+}
+
+.no-border:before {
+    border: none !important;
 }

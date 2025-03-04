@@ -22,7 +22,7 @@
 
         <div class="carousel-caption d-none d-md-block margin-bottom">
             <a href="{% url 'blog:post' slug=article.slug %}">
-                <h1>{{ article.title|upper }}</h1>
+                <h1 class="no-border">{{ article.title|upper }}</h1>
                 {% if article.summary %}
                   <p>{{ article.summary|truncatewords_html:20}}</p>
                 {% else %}
