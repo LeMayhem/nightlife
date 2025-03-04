@@ -1,6 +1,5 @@
 .DS_Store
 /.env/
-migrations/
 src/staticfiles
 src/mediafiles/artists
 src/mediafiles/users
