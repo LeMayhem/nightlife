@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
       input.addEventListener('keyup', (e) => {
         var inputs = e.target.value.toLowerCase(); //do lowercase
         //loop through outer div and hide it
-        document.querySelectorAll('.artist-card').forEach(function(el) {
+        document.querySelectorAll( '.first-letter, .artist-card').forEach(function(el) {
           el.style.display = 'none';
         });
         //loop through outer ->card-title

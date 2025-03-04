@@ -28,13 +28,21 @@
           <i class="bi bi-search search-icon"></i>
         </div>
       </div>
-      <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
-        {% for artist in artists %}
-          {% include 'artists/artist_cards.html' %}
-        {% endfor %}
+      <div class="row">
+        {% regroup artists by name|first|upper as letter_list %}
+        <div class="margin-bottom">
+          {% for letter in letter_list %}
+            <h2 class="first-letter">{{ letter.grouper }}</h2>
+            <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+              {% for artist in letter.list %}
+                {% include 'artists/artist_cards.html' %}
+              {% endfor %}
+            </div>
+          {% endfor %}
+        </div>
       </div>
 
-      <!--                         Pagination des artistes
+      <!--                                             Pagination des artistes
       <div class="row row-padding">
         <nav>
           <ul class="pagination justify-content-center">
@@ -83,7 +91,7 @@
             {% endif %}
           </ul>
         </nav>
-      </div>                         -->
+      </div>                                             -->
     {% else %}
       <div class="col">
         <div class="row row-padding text-center">

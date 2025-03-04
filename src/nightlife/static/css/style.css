@@ -178,7 +178,7 @@ h1:before {
     height: 0;
     width: 100px;
     content: '';
-    border-top: 3px solid black;
+    border-top: 4px solid black;
 }
 
 .no-border:before {
