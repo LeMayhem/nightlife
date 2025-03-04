@@ -16,7 +16,7 @@ import requests
 from artists.forms import ArtistCreateForm
 from artists.models import Artist
 from events.models import Event, Tag
-from nightlife.spotify_methods import get_tokens, spotify_search, get_authorization_url, is_user_connected, user_get_followed_artists
+from nightlife.spotify_methods import get_tokens, spotify_get_related_artists, spotify_search, get_authorization_url, is_user_connected, user_get_followed_artists
     
 # Variables globales pour stocker l'adresse avant redirection
 REFERER = None
@@ -188,6 +188,13 @@ class ArtistDetail(DetailView):
     model = Artist
     template_name = "artists/artist_detail.html"
     context_object_name = "artist"
+
+    def get_context_data(self, **kwargs: Any) -> dict:
+        context = super().get_context_data(**kwargs)
+        artist = self.get_object()
+        context['artists_with_common_tags'] = artist.get_artists_with_common_tags()
+
+        return context
 
 @method_decorator(login_required, name="dispatch")
 class ArtistDelete(DeleteView):

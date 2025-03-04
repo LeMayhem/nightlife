@@ -107,14 +107,14 @@
     </div>
   {% endif %}
 
-  {% if post.related_artists %}
+  {% if post.linked_artists %}
     <div class="container-fluid">
       <div class="container container-section">
         <div class="row row-padding">
           <h1>Artiste(s) lié(s)</h1>
         </div>
         <div class="row row-padding row-cols-2 row-cols-lg-5 g-2 g-lg-3">
-          {% for artist in post.related_artists.all %}
+          {% for artist in post.linked_artists.all %}
             {% include 'artists/artist_cards.html' %}
           {% endfor %}
         </div>

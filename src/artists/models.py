@@ -5,6 +5,7 @@ from django.forms import ValidationError
 from django.template.defaultfilters import slugify
 from django.urls import reverse
 from django.utils.translation import gettext_lazy as _
+from django.db.models import Count
 
 from comments.models import Comment
 from nightlife.methods import PathAndRename
@@ -56,3 +57,9 @@ class Artist(models.Model):
     
     def total_followers(self):
         return self.followers.count()
+    
+    def get_artists_with_common_tags(self):
+        return Artist.objects.filter(tags__in=self.tags.all()) \
+            .exclude(id=self.id) \
+            .annotate(num_common_tags=Count('tags')) \
+            .order_by('-num_common_tags')[:5]

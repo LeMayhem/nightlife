@@ -142,3 +142,19 @@ def user_get_followed_artists():
         return None
     
     return all_artists
+
+def spotify_get_related_artists(artist_id):
+    global access_token
+    if not is_user_connected():
+        access_token = refresh_access_token()
+    
+    url = f'https://api.spotify.com/v1/artists/{artist_id}/related-artists'
+    headers = get_auth_headers(access_token)
+    response = requests.get(url, headers=headers)
+    
+    if response.status_code == 200:
+        return response.json()["items"]
+    else:
+        print(f"Error: {response.status_code}")
+        print(f"Response content: {response.content}")
+        return None

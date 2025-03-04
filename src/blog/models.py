@@ -25,7 +25,7 @@ class BlogPost(models.Model):
     thumbnail = models.ImageField(blank=True, upload_to=path_and_rename)
     tags = models.ManyToManyField(Tag, related_name='blogpost_tags')
     related_event = models.ForeignKey(Event, on_delete=models.SET_NULL, related_name='related_event', null=True, blank=True,  verbose_name="Évènement lié")
-    related_artists = models.ManyToManyField(Artist, related_name='related_artists', blank=True, verbose_name="Artistes liés")
+    linked_artists = models.ManyToManyField(Artist, related_name='linked_artists', blank=True, verbose_name="Artistes liés")
     comments = models.ManyToManyField(Comment, related_name='blogpost_comments', blank=True)
 
 
