@@ -66,30 +66,40 @@ You have access to:
 - The top 4 promoters
 
 ### Events
+<img src="./src/mediafiles/readme/localhost_8000_events.png" width=30%>
+
+Main page for discovering events, past and future.   
+Events are regrouped by date
 
 <img src="./src/mediafiles/readme/localhost_8000_events_the-magician-album-tour.png" width=30%>
 
-Here you can discover and follow events. Promoters can sign up to create their own events to reach new people.
-Promoters can ask to feature their events.
+Here you can discover and follow events. Promoters can sign up to create their own events to reach new people.   
+Promoters can ask to feature their events.   
 Members can discuss on every events to find friends to hangout with.
 
 ### Artists
 
 <img src="./src/mediafiles/readme/localhost_8000_artists.png" width=30%>
-<img src="./src/mediafiles/readme/localhost_8000_artists_amelie-lens.png" width=30%>
 
-You can check all the events your favorites artists are playing. You can follow them in order to keep you in touch.
+You can check all the events your favorites artists are playing. You can follow them in order to keep you in touch.   
+You can filter artists live, by using the search bar   
 With Spotify API, you can do some actions:
 - You can massively follow all the artists from your spotify to Nightlife.
 - You can massively import all the artists from your Spotify to Nightlife (Admin)
+
+<img src="./src/mediafiles/readme/localhost_8000_artists_amelie-lens.png" width=30%>
+
 Members can discuss on every artists fan pages to meet other fans.
 
 ### Blog
 
 <img src="./src/mediafiles/readme/localhost_8000_blog.png" width=30%>
+
+Members can inform themselves with the blog part.  
+Admin can create posts to feature events or artists, to be desplayed on home page.
+
 <img src="./src/mediafiles/readme/localhost_8000_blog_the-magician.png" width=30%>
 
-Members can inform themselves with the blog part. Admin can create posts to feature events or artists, to be desplayed on home page.
 Members can also discuss on every blog posts.
 
 ### Search
@@ -99,11 +109,19 @@ Members can also discuss on every blog posts.
 - You can search globally from the header's searchbar, which will search on Artists, events and blogposts
 - You can filter by using searchbars on Artists, events and blogposts list pages
 
+### Member page
+
+<img src="./src/mediafiles/readme/localhost_8000_admin.png" width=30%>
+
+- You can see the member/promoter page
+- All the events from the promoter can be reach here
+
 ## WIP:
+- Dockerise the app (In progress !)
 - Build more interactions between Spotify API and Nightlife (Playlists, etc)
 - Add Facebook login
 - Add Soundcloud API
-- Add notifications system
+- Add notifications system (In progress !)
 - More filters on list pages
 - Footer
 
