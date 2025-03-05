@@ -11,6 +11,8 @@ This project aims to use Django framework and Spotify API. This is a WIP, you ca
 
 ## Installation
 
+/!\ New dockerfile in progress   
+
 1. Clone the repository:
 
     ```bash
@@ -68,13 +70,12 @@ You have access to:
 ### Events
 <img src="./src/mediafiles/readme/localhost_8000_events.png" width=30%>
 
-Main page for discovering events, past and future.   
-Events are regrouped by date
+Here you can discover and follow events. Promoters can sign up to create their own events to reach new people.   
+Promoters can ask to feature their events.   
+Events are regrouped by date   
 
 <img src="./src/mediafiles/readme/localhost_8000_events_the-magician-album-tour.png" width=30%>
 
-Here you can discover and follow events. Promoters can sign up to create their own events to reach new people.   
-Promoters can ask to feature their events.   
 Members can discuss on every events to find friends to hangout with.
 
 ### Artists
@@ -111,7 +112,7 @@ Members can also discuss on every blog posts.
 
 ### Member page
 
-<img src="./src/mediafiles/readme/localhost_8000_admin.png" width=30%>
+<img src="./src/mediafiles/readme/localhost_8000_accounts_admin.png" width=30%>
 
 - You can see the member/promoter page
 - All the events from the promoter can be reach here
